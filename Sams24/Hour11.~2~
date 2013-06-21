@@ -1,0 +1,6 @@
+Emacs interfaces to the spelling checker program, called ispell, and you can use it to spell-check a single word, a region, or a whole buffer.
+on-the-fly spell-checking: wheneve you type a word, it is spell-checked and, if it contains errors, the word is hightlighted and you are offered a menu of suggestions
+Basic spelling commands: exit-ispell-word(M-$), ispell-region, and ispell-buffer.
+
+Pressing r when spell-checking lets you type the correct word yourself.
+Pressing l during spell-checking, you can ask Emacs to search for a given pattern in the dictionary.

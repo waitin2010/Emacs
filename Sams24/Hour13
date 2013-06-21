@@ -1,0 +1,21 @@
+Hour 13 -- Marcros
+
+A macro is a recorded sequence of keystrokes that you can execute over and over again.
+
+Recording a Macros
+>start-kdb-macro 
+>	keystroke1
+>	keystroke2
+>	...
+>	keystroken
+>end-kdb-macro
+
+Executing Macros
+>call-last-kdb-macros
+
+Naming a Macro
+>name-last-kdb-macro
+
+Saving a Macro
+>insert-kdb-macro
+

@@ -1,0 +1,45 @@
+Hour9 Regular Expressions
+
+Wildcards(pattern)     --a way of specifying several files in an easy way.
+
+Table 9.2 Regular Expression Symbols
+
+Symbol	  Meaning
+------------------------------------------------------------------------------------------------
+          Repeaters
+------------------------------------------------------------------------------------------------
+*         Repeats the previous regular expression any number of times(including zero times).
++	  Repeats the previous regular expression any number of times(at least one time).
+?         The previous regular expression matches zero or one time
+------------------------------------------------------------------------------------------------
+          Grouping/Character Groups
+------------------------------------------------------------------------------------------------
+\(...\)   Groups the text for later reference or to overcome precedence problem.
+[...]	  Matches any of the characters within the group.(But only one character, if you need to
+	  match a number, combine this with *,+,or ?.)
+[^...]	  Matches any character not in this group
+------------------------------------------------------------------------------------------------
+          Positions
+------------------------------------------------------------------------------------------------
+^         Matches the beginning of the line or string.
+$	  Matches the end of line or string.
+\<	  Matches the beginning of a word.
+\>	  Matches the end of a word.
+------------------------------------------------------------------------------------------------
+          Special Characters
+------------------------------------------------------------------------------------------------
+.         Matches any character.
+\w        Matches any character from a word(in most case, equal to [0-9 a-z A-A]).
+\W	  Matches any character not from a word([^0-9 a-z A-Z]).
+
+3. Special characters in regular expression: $, ^, ., *, +, [, ], \.
+
+4. Repeating Elements: Regular expressions are built using a number of special characters that add special meaning to the string.
+
+5. combining Regular Expressions: A and B == AB
+   	     	     		  A or  B == A \| B
+
+6.A general rule of thumb that you can use is that *, +, and ? need their arguments enclosed in parentheses unless the argument is a single letter.(The preceding problem)
+
+7. Character Groups is a way of defining a group of possible characters.
+   character groups can be negated.

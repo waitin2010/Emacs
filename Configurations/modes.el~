@@ -1,0 +1,5 @@
+;;;;;;;;;;;;;;;;   display-time-mode    ;;;;;;;;;;;;;;;;
+(display-time-mode)
+
+;;;; iswitch-mode  ;;;;
+(iswitch-mode)

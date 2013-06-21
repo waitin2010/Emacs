@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------------------------------------------
+ispell  | program that Interactively check a region or buffer for spelling errors.
+----------------------------------------------------------------------------------------------------
+keymap  | function           | description
+--------|--------------------|-----------------------------------------------------------------------------
+f10     |ispell-word         | Check spelling of word under or before the cursor
+M-f10   |ispell-region       | Interactively check a region for spelling errors.
+C-f10   |ispell-buffer       | Check the current buffer for spelling errors interactively
+C-M-f10 |flyspell-mode       | Minor mode perfoming on-the-fly spelling checking.
+C-tab   |ispell-complete-word| Try to complete the word before or under point
+        |ispell-help         | Display a list of the options available when a misspelling is encountered.(c-h f ispell-help)
+

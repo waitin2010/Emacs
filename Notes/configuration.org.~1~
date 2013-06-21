@@ -1,0 +1,39 @@
+* materials: Hour 22,23,24 from 'Sams Teach Yourself Emacs in 24 Hours'
+* Learning Lisp Basics
+  The focus in this hour is on customizing Emacs using your .emacs file, not on
+topics specific to writing larger extensions. This hour teaches you enough about
+Lisp to understand and edit you .emacs file.
+** The purpose of Lisp
+   Easy configure and support enough power to do whatever you want.
+** Values in Lisp
+   - Booleans :: In many situations there are two possible values for a given configureation option.
+		 The value true is in Lisp represented using the character t, and false is represented using nil.
+   - Numbers :: Examples of the use of numbers include the number of backups to keep, the number of character to indent when programming C and so on.
+   - String :: Strings are used in Emacs in many different situations. Most of these situations are when programming Lisp.
+	       String are represented by placing quotation marks around the string.
+   - Symbols :: In Emacs, a data called symbols exists which can be viewed as another way of writing a string.
+		Symbols are written by putting a single quotation mark in front of the name as in 'do-backup
+   - Lists :: Lists are specified by listing each of the elements within a pair of parentheses, the outermost list must be prefixed with a quote.
+   - Association Lists(alist) :: An association list is a map from a key to a value.
+** Operation on Lists
+   Whether your new element should be added to the front of the list or the end of the list depends on what your intentions are.
+   - inserting in the front of a list :: take precedence over the others
+   - Inserting at the end of a list. :: the others have precedence over new element.
+   | Intention        | Set Global value     | Set local value     |
+   |------------------+----------------------+---------------------|
+   | not buffer-local | setq or setq-default | make-local-variable |
+   | buffer-local     | setq-default         | setq                |
+** configure Options for a single file
+   Some configurations might be local to a given file rather than a given major mode.
+   This can be obtained by inserting a few line at the bottom of the give file.
+   /* Local Variables: */
+   /* variable1: value1 */
+   /* variable2: value2 */
+   /* End: */
+
+** Function Definitions
+   A function is a collection of commands that is given a name. When the function is executed, each command is executed in turn.
+
+
+
+

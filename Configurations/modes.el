@@ -1,0 +1,3 @@
+;;;; iswitch-mode  ;;;;
+(iswitchb-mode)
+

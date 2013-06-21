@@ -1,0 +1,30 @@
+* Document Template
+ 
+** Purpose
+   Try to avoid doing trivial monotonous tasks.
+** Finding Strategy
+   When a new file is created, Emacs searches for a template with a name based on the file's extension such as TEMPLATE.<extension>.tpl.
+   Finding Strategy:
+   1. current directory and it templates subdirectory
+   2. parent directory and it emplates subdirectory
+   3. grandparent directory and it templates subdirectory.
+** stand-ins
+   The tempaltes con contain ordinary text combined with stand-ins.
+   These  stand-ins either are replaced with other text or mark positions in the buffer at the time a new file is created based on this template.
+   Form: >>>stand-ins<<<
+   - Files and Directories
+   | code        | Example      | Descrption                                     |
+   |-------------+--------------+------------------------------------------------|
+   | >>>DIR<<<   | ~/letters/   | Directory part of the filename                 |
+   | >>>FILE<<<  | Gretchen.txt | The filename withou the directory              |
+   | >>>RILE_RAW | Gretchen     | The filename without the extension             |
+   | >>>EILE_EXT | txt          | The extension of the filename(without the dot) |
+   - Time and Date
+   |   |   |   |
+   |---+---+---|
+   |   |   |   |
+   |   |   |   |
+   
+  
+
+

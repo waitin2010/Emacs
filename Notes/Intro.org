@@ -1,0 +1,13 @@
+* Introduce to Emacs
+l** installation
+   Prerequires: Ubuntu
+   Type : sudo apt-get instal emacs [ tab]
+   then you can get the version of emacs you can download.
+   Here we assumpe that it is emacs23
+   So, type: 
+       sudo apt-get install emacs23
+** Basic Tutorial
+   type: emacs 
+   then, you have run emacs
+   then, type C-h t for Emacs tutorial from emacs
+   

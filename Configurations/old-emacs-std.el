@@ -1,0 +1,155 @@
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(scheme-program-name "stk-simply"))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+
+(require 'template)
+(template-initialize)
+
+
+(global-set-key [(f5)] 'undo)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;    Make numbered backups
+(setq make-backup-files t)
+(setq version-control t)
+
+;(require 'redo+)
+;(setq undo-no-redo t)
+;(global-set-key [(shift f5)] 'redo)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; copy every file you save in emacs to a backup diretory tree
+(require 'backup-each-save)
+(add-hook 'after-save-hook 'backup-each-save)
+
+; Note:
+; 
+; 'bury-buffer is the primitive that cycles through the buffers in one
+;    direction (while ignoring insignificant buffers)
+; 
+; 'yic-next-buffer is a simple function to cycle through the other way.  It
+;    even displays buffers that are usually ignored, since I don't bother to
+;    check them.
+; 
+; 'yic-other-buffer changes to the default other buffer, without waiting for a
+;    RET
+; 
+; 'yic-kill-current-buffer kills current buffer.
+; 
+; I use these all the time to move back and forth between buffers, and also the
+; ability to kill buffers easily is great when I am in dired-mode.
+(global-set-key "\C-x\C-p" 'bury-buffer)
+(global-set-key "\C-x\C-n" 'yic-next-buffer)
+(global-set-key "\C-x\C-o" 'yic-other-buffer)
+(global-set-key "\C-x\C-k" 'yic-kill-current-buffer)
+
+(defun yic-next-buffer ()
+  "Switch to previous buffer in current window."
+  (interactive)
+  (switch-to-buffer (car (reverse (buffer-list)))))
+
+(defun yic-other-buffer ()
+  "Switch to the other buffer (2nd in list-buffer) in current window."
+  (interactive)
+  (switch-to-buffer (other-buffer)))
+
+(defun yic-kill-current-buffer ()
+  "Kill current buffer."
+  (interactive)
+  (kill-buffer (current-buffer)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Naming a buffer in an easier way
+ (require 'iswitchb)
+;; (iswitchb-default-keybindings)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;Saving the Buffer List
+(load "desktop")
+(desktop-load-default)
+(desktop-read)
+
+(require 'sams-lib)
+(global-set-key [(control ?\+)] 'other-window)
+(global-set-key [(control ?\-)] 'sams-other-window-backwords)
+
+(global-set-key [(meta ?\-)] 'sams-other-frame-backwards)
+(global-set-key [(meta ?\+)] 'other-frame)
+
+(autoload 'all "all" nil t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(autoload 'igrep "igrep"
+  "*Run `grep` PROGRAM to match EXPRESSION in FILES..." t)
+(autoload 'igrep-find "igrep"
+  "*Run `grep` via `find`..." t)
+(autoload 'igrep-visited-files "igrep"
+  "*Run `grep` ... on all visited files." t)
+(autoload 'dired-do-igrep "igrep"
+  "*Run `grep` on the marked (or next prefix ARG) files." t)
+(autoload 'dired-do-igrep-find "igrep"
+  "*Run `grep` via `find` on the marked (or next prefix ARG) directories." t)
+(autoload 'Buffer-menu-igrep "igrep"
+  "*Run `grep` on the files visited in buffers marked with '>'." t)
+(autoload 'igrep-insinuate "igrep"
+  "Define `grep' aliases for the corresponding `igrep' commands." t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Saving bookmarks
+(setq bookmark-save-flag 1)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq search-whitespace-regexp "[ \t\r\n]+")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Shift the meaning of C-s and C-M-s
+(global-set-key [(control s)] 'isearch-forward-regexp)
+(global-set-key [(control r)] 'isearch-backward-regexp)
+(global-set-key [(control meta s)] 'isearch-forward)
+(global-set-key [(control meta r)] 'isearch-backward)
+
+(require 'google-define)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; ispell checking
+;(require 'flyspell-1.7p)
+(global-set-key [(f10)] 'ispell-word)
+(global-set-key [(meta f10)] 'ispell-region)
+(global-set-key [(control f10)] 'ispell-buffer)
+;(global-set-key [(control meta f10)] 'flyspell-prog-mode)
+
+(global-set-key "\M- " 'hippie-expand)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; Showing matching parentheses
+(setq show-paren-mode t)
+(setq show-paren-style 'parenthesis)
+
+(setq blink-matching-parent t)
+(setq visible-bell t)
+
+(autoload 'folding-mode "folding" "Folding mode" t)
+
+(defun my-print ()
+  "Postscript print the current buffer with faces, but without a header."
+  (interactive)
+  (let ((ps-print-header nil))
+    (ps-print-buffer-with-faces)))
+
+;************ org mode 
+
+(load "orgmode")
+

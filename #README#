@@ -1,0 +1,31 @@
+	Some information about this directory.
+
++Configuration....  	  -Contain configuration file for Emacs.
+ -bindings.el	     	  -keybindings for your Emacs setup.
+ -emacs.el	   	  -one copy of ~/.emacs
+ -emacs-std.el	    	  -for the standard Emacs options.
+ -macros.el	    	  -contain all the macros you have developed.
+ -modes.el	    	  -configurations for different major modes.
+
++Extensions....	    	  -configurations for different extensions.
+ -backup-each-save.el	  -backup each savepoint of file
+ -folding.el		  -A folding-editor-like minor mode.
+ -igrep.el		  -An improved interface to 'grep' and 'find'
+ -mark.el		  -Navigate and visualize the mark-ring
+ -speedbar.el		  -quick access to files and tags in a frame
+ +templates....	     	  -contains template file for template.el
+ -templates.el	     	  -use templates, decorate comments, auto-update buffers
+ -redo+.el		  -Redo/undo system for Emacs
+ -yic-buffer.el		  -Cycles through buffers in one directions
+ -sregex.el		  -Symbolic regular expressions
+
++Notes....	     	  -contains my notes about Emacs.
+ -configuration.org  	  -notes about Configuration on Emacs.
+
+-README		     	  -some information about this directory.
+
+note: + stands for directory, - stands for file.
+
+;;; Local Variables:
+;;; eval: (add-hook (make-local-variable 'after-save-hook) 'backup-each-save)
+;;; End:

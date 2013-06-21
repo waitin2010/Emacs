@@ -1,0 +1,6 @@
+Regular Expression Searches
+isearch-forward-regexp        M-C-s	Do incremental search forward for regular expression.
+isearch-backward-regexp       M-C-r	Do incremental search backward for regular expression.
+
+Hi Jesper Peterson.
+hello,
