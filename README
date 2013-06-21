@@ -1,4 +1,13 @@
 	Some information about this directory.
+Installation:
+  1.copy this direction Emacs/ to your home direction.
+  2. copy the emacs.el to your home direction and rename it to .emacs
+
+Test if installing seccessfully, try to type
+     	 C-h k f5
+And you will get f5 bounding to undo.
+
+Direction contents are as follow:
 
 +Configuration....  	  -Contain configuration file for Emacs.
  -bindings.el	     	  -keybindings for your Emacs setup.
@@ -18,7 +27,6 @@
  -redo+.el		  -Redo/undo system for Emacs
  -yic-buffer.el		  -Cycles through buffers in one directions
 
-
 +Notes....	     	  -contains my notes about Emacs.
  -configuration.org  	  -notes about Configuration on Emacs.
 
@@ -26,6 +34,4 @@
 
 note: + stands for directory, - stands for file.
 
-;;; Local Variables:
-;;; eval: (add-hook (make-local-variable 'after-save-hook) 'backup-each-save)
-;;; End:
+
